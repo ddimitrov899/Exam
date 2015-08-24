@@ -7,8 +7,8 @@ namespace BangaloreUniversityLearningSystem
     {
         public static void Main()
         {
-            var इंजन = new बंगलौर_विश्वविद्यालय_इंजन();
-            इंजन.रन();
+            var engen = new BangaloreUniversityEngine();
+            engen.Run();
         }
     }
 }

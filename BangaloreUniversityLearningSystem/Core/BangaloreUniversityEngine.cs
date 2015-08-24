@@ -8,9 +8,9 @@ using BangaloreUniversityLearningSystem.Utilities;
 
 namespace BangaloreUniversityLearningSystem.Core
 {
-    public class बंगलौर_विश्वविद्यालय_इंजन : Iइंजन
+    public class BangaloreUniversityEngine : IEngen
     {
-        public void रन()
+        public void Run()
         {
             var db = new BangaloreUniversityDate();
             User u = null;

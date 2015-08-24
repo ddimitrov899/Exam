@@ -9,9 +9,9 @@ namespace BangaloreUniversityLearningSystem.Interfaces
         UsersRepository users { get; }
         IRepository<Course> courses { get; }
     }
-    public interface Iइंजन
+    public interface IEngen
     {
-        void रन();
+        void Run();
     }
     public interface IRepository<T>
     {

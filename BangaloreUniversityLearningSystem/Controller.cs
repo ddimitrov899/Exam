@@ -10,6 +10,7 @@ namespace BangaloreUniversityLearningSystem
     public abstract class Controller
     {
         protected IBangaloreUniversityDate Data { get; set; }
+
         protected IView View(object model)
         {
             string fullNamespace = this.GetType().Namespace;
@@ -23,6 +24,7 @@ namespace BangaloreUniversityLearningSystem
                 .GetType(fullPath);
             return Activator.CreateInstance(viewType, model) as IView;
         }
+
         protected void EnsureAuthorization(params Role[] roles)
         {
             if (!this.HasCurrentUser)
@@ -32,8 +34,14 @@ namespace BangaloreUniversityLearningSystem
 
             foreach (var u in Data.users.GetAll())
                 if (!roles.Any(role => this.usr.IsInRole(role)))
-                throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+                    throw new DivideByZeroException("The current user is not authorized to perform this operation.");
         }
-        public User usr {get;set;}
-        public bool HasCurrentUser{get{return usr != null;}}}
+
+        public User usr { get; set; }
+
+        public bool HasCurrentUser
+        {
+            get { return usr != null; }
+        }
+    }
 }
