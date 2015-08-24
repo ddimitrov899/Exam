@@ -15,7 +15,8 @@ namespace BangaloreUniversityLearningSystem.Controllers
         {
             if (password != confirmPassword)
             {
-                throw new ArgumentException("The provided passwords do not match.");
+                const string message = "The provided passwords do not match.";
+                throw new ArgumentException(message);
             }
 
             this.EnsureNoLoggedInUser();
@@ -39,12 +40,14 @@ namespace BangaloreUniversityLearningSystem.Controllers
             var existingUser = this.Data.Users.GetByUsername(username);
             if (existingUser == null)
             {
-                throw new ArgumentException(string.Format("A user with username {0} does not exist.", username));
+                string message = string.Format("A user with username {0} does not exist.", username);
+                throw new ArgumentException(message);
             }
 
             if (existingUser.PasswordHash != HashUtilities.HashPassword(password))
             {
-                throw new ArgumentException("The provided password is wrong.");
+                const string message = "The provided password is wrong.";
+                throw new ArgumentException(message);
             }
             this.User = existingUser;
             return View(existingUser);
@@ -53,10 +56,16 @@ namespace BangaloreUniversityLearningSystem.Controllers
         public IView Logout()
         {
             if (!this.HasCurrentUser)
-                throw new ArgumentException("There is no currently logged in user.");
+            {
+                const string message = "There is no currently logged in user.";
+                throw new ArgumentException(message);
+            }
 
             if (!this.User.IsInRole(Role.Lecturer) && !this.User.IsInRole(Role.Student))
-                throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+            {
+                const string message = "The current user is not authorized to perform this operation.";
+                throw new DivideByZeroException(message);
+            }
 
             var user = this.User;
             this.User = null;
@@ -67,7 +76,8 @@ namespace BangaloreUniversityLearningSystem.Controllers
         {
             if (this.HasCurrentUser)
             {
-                throw new ArgumentException("There is already a logged in user.");
+                const string message = "There is already a logged in user.";
+                throw new ArgumentException(message);
             }
         }
     }
