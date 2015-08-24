@@ -2,7 +2,7 @@
 {
     using Core;
 
-    public class Program
+    public class BangaloreUniversityLearningSystemMain
     {
         public static void Main()
         {
