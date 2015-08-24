@@ -1,13 +1,14 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
-using BangaloreUniversityLearningSystem.Data;
-using BangaloreUniversityLearningSystem.Infrastructure;
-using BangaloreUniversityLearningSystem.Interfaces;
-using BangaloreUniversityLearningSystem.Utilities;
-
-namespace BangaloreUniversityLearningSystem.Core
+﻿namespace BangaloreUniversityLearningSystem.Core
 {
+    using System;
+    using System.Linq;
+    using System.Reflection;
+    using Data;
+
+    using Infrastructure;
+    using Interfaces;
+    using Utilities;
+
     public class BangaloreUniversityEngine : IEngen
     {
         public void Run()
@@ -17,10 +18,11 @@ namespace BangaloreUniversityLearningSystem.Core
             while (true)
             {
                 string url = Console.ReadLine();
-                if (url == null)
+                if (string.IsNullOrEmpty(url))
                 {
                     break;
                 }
+
                 var route = new Route(url);
                 var controllerType =
                     Assembly.GetExecutingAssembly()
@@ -46,8 +48,14 @@ namespace BangaloreUniversityLearningSystem.Core
         {
             return action.GetParameters().Select<ParameterInfo, object>(p =>
             {
-                if (p.ParameterType == typeof (int)) return int.Parse(route.Parameters[p.Name]);
-                else return route.Parameters[p.Name];
+                if (p.ParameterType == typeof(int))
+                {
+                    return int.Parse(route.Parameters[p.Name]);
+                }
+                else
+                {
+                    return route.Parameters[p.Name];
+                }
             }).ToArray();
         }
     }

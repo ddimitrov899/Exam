@@ -8,7 +8,7 @@
     {
         public UsersRepository()
         {
-            UsersByUsername = new Dictionary<string, User>();
+            this.UsersByUsername = new Dictionary<string, User>();
         }
 
         public Dictionary<string, User> UsersByUsername { get; }

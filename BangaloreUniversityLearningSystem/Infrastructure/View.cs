@@ -1,8 +1,7 @@
-﻿using BangaloreUniversityLearningSystem.Interfaces;
-
-namespace BangaloreUniversityLearningSystem.Infrastructure
+﻿namespace BangaloreUniversityLearningSystem.Infrastructure
 {
     using System.Text;
+    using Interfaces;
 
     public abstract class View : IView
     {

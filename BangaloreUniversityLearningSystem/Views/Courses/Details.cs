@@ -1,11 +1,11 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using BangaloreUniversityLearningSystem.Infrastructure;
-using BangaloreUniversityLearningSystem.Utilities;
-
-namespace BangaloreUniversityLearningSystem.Views.Courses
+﻿namespace BangaloreUniversityLearningSystem.Views.Courses
 {
+    using System;
+    using System.Linq;
+    using System.Text;
+    using Infrastructure;
+    using Utilities;
+
     public class Details : View
     {
         public Details(Course course)
@@ -29,4 +29,3 @@ namespace BangaloreUniversityLearningSystem.Views.Courses
         }
     }
 }
-

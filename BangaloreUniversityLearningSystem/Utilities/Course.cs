@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-
 namespace BangaloreUniversityLearningSystem.Utilities
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Course
     {
-        private string _name;
+        private string name;
 
         public Course(string name)
         {
@@ -17,7 +17,7 @@ namespace BangaloreUniversityLearningSystem.Utilities
         {
             get
             {
-                return this._name;
+                return this.name;
             }
 
             set
@@ -28,7 +28,7 @@ namespace BangaloreUniversityLearningSystem.Utilities
                     throw new ArgumentException(message);
                 }
 
-                this._name = value;
+                this.name = value;
             }
         }
 

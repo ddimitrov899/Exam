@@ -1,22 +1,23 @@
-﻿using System;
-using BangaloreUniversityLearningSystem.Interfaces;
-using BangaloreUniversityLearningSystem.Utilities;
-
-namespace BangaloreUniversityLearningSystem.Controllers
+﻿namespace BangaloreUniversityLearningSystem.Controllers
 {
-    class UsersController : Controller
+    using System;
+    using Interfaces;
+    using Utilities;
+
+    public class UsersController : Controller
     {
         public UsersController(IBangaloreUniversityDate data, User user)
         {
-            Data = data;
-            User = user;
+            this.Data = data;
+            this.User = user;
         }
+
         public IView Register(string username, string password, string confirmPassword, string role)
         {
             if (password != confirmPassword)
             {
-                const string message = "The provided passwords do not match.";
-                throw new ArgumentException(message);
+                const string Message = "The provided passwords do not match.";
+                throw new ArgumentException(Message);
             }
 
             this.EnsureNoLoggedInUser();
@@ -30,7 +31,7 @@ namespace BangaloreUniversityLearningSystem.Controllers
             Role userRole = (Role)Enum.Parse(typeof(Role), role, true);
             var user = new User(username, password, userRole);
             this.Data.Users.Add(user);
-            return View(user);
+            return this.View(user);
         }
 
         public IView Login(string username, string password)
@@ -46,38 +47,39 @@ namespace BangaloreUniversityLearningSystem.Controllers
 
             if (existingUser.PasswordHash != HashUtilities.HashPassword(password))
             {
-                const string message = "The provided password is wrong.";
-                throw new ArgumentException(message);
+                const string Message = "The provided password is wrong.";
+                throw new ArgumentException(Message);
             }
+
             this.User = existingUser;
-            return View(existingUser);
+            return this.View(existingUser);
         }
 
         public IView Logout()
         {
             if (!this.HasCurrentUser)
             {
-                const string message = "There is no currently logged in user.";
-                throw new ArgumentException(message);
+                const string Message = "There is no currently logged in user.";
+                throw new ArgumentException(Message);
             }
 
             if (!this.User.IsInRole(Role.Lecturer) && !this.User.IsInRole(Role.Student))
             {
-                const string message = "The current user is not authorized to perform this operation.";
-                throw new DivideByZeroException(message);
+                const string Message = "The current user is not authorized to perform this operation.";
+                throw new DivideByZeroException(Message);
             }
 
             var user = this.User;
             this.User = null;
-            return View(user);
+            return this.View(user);
         }
 
         private void EnsureNoLoggedInUser()
         {
             if (this.HasCurrentUser)
             {
-                const string message = "There is already a logged in user.";
-                throw new ArgumentException(message);
+                const string Message = "There is already a logged in user.";
+                throw new ArgumentException(Message);
             }
         }
     }

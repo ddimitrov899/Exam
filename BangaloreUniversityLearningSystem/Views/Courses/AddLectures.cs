@@ -1,9 +1,9 @@
-using System.Text;
-using BangaloreUniversityLearningSystem.Infrastructure;
-using BangaloreUniversityLearningSystem.Utilities;
-
 namespace BangaloreUniversityLearningSystem.Views.Courses
 {
+    using System.Text;
+    using Infrastructure;
+    using Utilities;
+
     public class AddLectures : View
     {
         public AddLectures(Course course)

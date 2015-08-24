@@ -1,10 +1,10 @@
-﻿using System;
-
-namespace BangaloreUniversityLearningSystem.Utilities
+﻿namespace BangaloreUniversityLearningSystem.Utilities
 {
+    using System;
+
     public class Lecture
     {
-        private string _name;
+        private string name;
 
         public Lecture(string name)
         {
@@ -15,13 +15,17 @@ namespace BangaloreUniversityLearningSystem.Utilities
         {
             get
             {
-                return this._name;
+                return this.name;
             }
+
             set
             {
-                if (value == null || value.Length < 3)
-                    throw new ArgumentException(string.Format("The lecture name must be at least 3 symbols long."));
-                this._name = value;
+                if (string.IsNullOrEmpty(value) || value.Length < 3)
+                {
+                    throw new ArgumentException("The lecture name must be at least 3 symbols long.");
+                }
+
+                this.name = value;
             }
         }
     }

@@ -6,11 +6,24 @@
 
     public class Repository<T> : IRepository<T>
     {
-        protected IList<T> Items;
+        private IList<T> items;
 
         public Repository()
         {
             this.Items = new List<T>();
+        }
+
+        public IList<T> Items
+        {
+            get
+            {
+                return this.items;
+            }
+
+            set
+            {
+                this.items = value;
+            }
         }
 
         public virtual IEnumerable<T> GetAll()

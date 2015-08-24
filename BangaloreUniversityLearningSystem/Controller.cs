@@ -1,17 +1,21 @@
-﻿using System.Diagnostics;
-using System.Reflection;
-using System.Linq;
-using System;
-using BangaloreUniversityLearningSystem.Interfaces;
-using BangaloreUniversityLearningSystem.Utilities;
-
-namespace BangaloreUniversityLearningSystem
+﻿namespace BangaloreUniversityLearningSystem
 {
+    using System;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Reflection;
+
+    using Interfaces;
+    using Utilities;
+
     public abstract class Controller
     {
         public User User { get; set; }
 
-        public bool HasCurrentUser => User != null;
+        public bool HasCurrentUser
+        {
+            get { return User != null; }
+        }
 
         protected IBangaloreUniversityDate Data { get; set; }
 
@@ -20,7 +24,7 @@ namespace BangaloreUniversityLearningSystem
             string fullNamespace = this.GetType().Namespace;
             int firstSeparatorIndex = fullNamespace.IndexOf(".", StringComparison.Ordinal);
             string baseNamespace = fullNamespace.Substring(0, firstSeparatorIndex);
-            string controllerName = this.GetType().Name.Replace("Controller", "");
+            string controllerName = this.GetType().Name.Replace("Controller", string.Empty);
             string actionName = new StackTrace().GetFrame(1).GetMethod().Name;
             string fullPath = baseNamespace + ".Views." + controllerName + "." + actionName;
             var viewType = Assembly
@@ -33,14 +37,14 @@ namespace BangaloreUniversityLearningSystem
         {
             if (!this.HasCurrentUser)
             {
-                const string message = "There is no currently logged in user.";
-                throw new ArgumentException(message);
+                const string Message = "There is no currently logged in user.";
+                throw new ArgumentException(Message);
             }
 
-            if (Data.Users.GetAll().Any(u => !roles.Any(role => this.User.IsInRole(role))))
+            if (this.Data.Users.GetAll().Any(u => !roles.Any(role => this.User.IsInRole(role))))
             {
-                const string message = "The current user is not authorized to perform this operation.";
-                throw new DivideByZeroException(message);
+                const string Message = "The current user is not authorized to perform this operation.";
+                throw new DivideByZeroException(Message);
             }
         }
     }

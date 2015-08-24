@@ -1,7 +1,6 @@
-﻿using BangaloreUniversityLearningSystem.Core;
-
-namespace BangaloreUniversityLearningSystem
+﻿namespace BangaloreUniversityLearningSystem
 {
+    using Core;
 
     public class Program
     {

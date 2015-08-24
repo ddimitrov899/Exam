@@ -5,8 +5,8 @@ namespace BangaloreUniversityLearningSystem.Utilities
 
     public class User
     {
-        private string _username;
-        private string _passwordHash;
+        private string username;
+        private string passwordHash;
 
         public User(string username, string password, Role role)
         {
@@ -20,7 +20,7 @@ namespace BangaloreUniversityLearningSystem.Utilities
         {
             get
             {
-                return this._username;
+                return this.username;
             }
 
             set
@@ -31,13 +31,17 @@ namespace BangaloreUniversityLearningSystem.Utilities
                     throw new ArgumentException(message);
                 }
 
-                this._username = value;
+                this.username = value;
             }
         }
 
         public string PasswordHash
         {
-            get { return this._passwordHash; }
+            get
+            {
+                return this.passwordHash;
+            }
+
             set
             {
                 if (string.IsNullOrEmpty(value) || value.Length < 5)
@@ -45,7 +49,8 @@ namespace BangaloreUniversityLearningSystem.Utilities
                     string message = "The password must be at least 5 symbols long.";
                     throw new ArgumentException(message);
                 }
-                this._passwordHash = value;
+
+                this.passwordHash = value;
             }
         }
 
