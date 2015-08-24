@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Data;
+using BangaloreUniversityLearningSystem.Data;
 using BangaloreUniversityLearningSystem.Infrastructure;
 using BangaloreUniversityLearningSystem.Interfaces;
 using BangaloreUniversityLearningSystem.Utilities;
@@ -26,14 +26,14 @@ namespace BangaloreUniversityLearningSystem.Core
                     Assembly.GetExecutingAssembly()
                         .GetTypes()
                         .FirstOrDefault(type => type.Name == route.ControllerName);
-                var ctrl = Activator.CreateInstance(controllerType, bangaloreUniversityDate, user) as Controller;
-                var act = controllerType.GetMethod(route.ActionName);
-                object[] @params = MapParameters(route, act);
+                var controller = Activator.CreateInstance(controllerType, bangaloreUniversityDate, user) as Controller;
+                var action = controllerType.GetMethod(route.ActionName);
+                object[] parameters = MapParameters(route, action);
                 try
                 {
-                    var view = act.Invoke(ctrl, @params) as IView;
+                    var view = action.Invoke(controller, parameters) as IView;
                     Console.WriteLine(view.Display());
-                    user = ctrl.User;
+                    user = controller.User;
                 }
                 catch (Exception ex)
                 {
