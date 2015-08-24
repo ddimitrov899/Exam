@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Interfaces;
 using Data;
 using BangaloreUniversityLearningSystem.Infrastructure;
+using BangaloreUniversityLearningSystem.Interfaces;
+using BangaloreUniversityLearningSystem.Utilities;
 
 namespace BangaloreUniversityLearningSystem.Core
 {

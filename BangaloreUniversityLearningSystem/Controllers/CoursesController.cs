@@ -1,7 +1,8 @@
 ﻿using BangaloreUniversityLearningSystem.utilities;
-using Interfaces;
 using System;
 using System.Linq;
+using BangaloreUniversityLearningSystem.Interfaces;
+using BangaloreUniversityLearningSystem.Utilities;
 
 namespace BangaloreUniversityLearningSystem.Controllers
 {

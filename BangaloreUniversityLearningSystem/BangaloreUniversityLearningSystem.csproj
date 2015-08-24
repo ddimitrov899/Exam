@@ -45,28 +45,35 @@
   <ItemGroup>
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Data\UserRepository.cs" />
-    <Compile Include="Everything.cs" />
+    <Compile Include="Utilities\Course.cs" />
+    <Compile Include="Utilities\Lecture.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Core\BangaloreUniversityEngine.cs" />
-    <Compile Include="Route.cs" />
+    <Compile Include="Infrastructure\Route.cs" />
     <Compile Include="Data\BangaloreUniversityDate.cs" />
     <Compile Include="Data\Repository.cs" />
-    <Compile Include="View.cs" />
-    <Compile Include="Interfaces.cs" />
+    <Compile Include="Infrastructure\View.cs" />
+    <Compile Include="Interfaces\Interfaces.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\HashUtilities.cs" />
+    <Compile Include="Type\Role.cs" />
+    <Compile Include="Utilities\User.cs" />
     <Compile Include="Utilities\UserRoleUtilities.cs" />
-    <Compile Include="Views\Views.cs" />
+    <Compile Include="Views\Courses\All.cs" />
+    <Compile Include="Views\Courses\AddLectures.cs" />
+    <Compile Include="Views\Courses\Enroll.cs" />
+    <Compile Include="Views\Courses\Crate.cs" />
+    <Compile Include="Views\Users\Logout.cs" />
+    <Compile Include="Views\Users\Login.cs" />
+    <Compile Include="Views\Users\Register.cs" />
+    <Compile Include="Views\Courses\Details.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Courses\" />
-    <Folder Include="Views\Users\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

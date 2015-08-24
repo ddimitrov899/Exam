@@ -1,10 +1,11 @@
-﻿namespace BangaloreUniversityLearningSystem.Infrastructure
+﻿using BangaloreUniversityLearningSystem.Interfaces;
+
+namespace BangaloreUniversityLearningSystem.Infrastructure
 {
     using System;
     using System.Collections.Generic;
     using System.Net;
     using utilities;
-    using Interfaces;
 
     public class Route : IRoute
     {

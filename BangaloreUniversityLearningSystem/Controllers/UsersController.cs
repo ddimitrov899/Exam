@@ -1,6 +1,7 @@
 ﻿using BangaloreUniversityLearningSystem.utilities;
-using Interfaces;
 using System;
+using BangaloreUniversityLearningSystem.Interfaces;
+using BangaloreUniversityLearningSystem.Utilities;
 
 namespace BangaloreUniversityLearningSystem.Controllers
 {
@@ -42,7 +43,7 @@ namespace BangaloreUniversityLearningSystem.Controllers
                 throw new ArgumentException(string.Format("A user with username {0} does not exist.", username));
             }
 
-            if (existingUser.pwd != HashUtilities.HashPassword(password))
+            if (existingUser.PasswordHash != HashUtilities.HashPassword(password))
             {
                 throw new ArgumentException("The provided password is wrong.");
             }

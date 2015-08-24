@@ -1,4 +1,6 @@
-﻿namespace BangaloreUniversityLearningSystem.Data
+﻿using BangaloreUniversityLearningSystem.Utilities;
+
+namespace BangaloreUniversityLearningSystem.Data
 {
     using data;
     using System.Collections.Generic;
@@ -10,7 +12,7 @@
 
         public User GetByUsername(string username)
         {
-            return this.items.FirstOrDefault(u => u.usr == username);
+            return this.items.FirstOrDefault(u => u.Username == username);
         }
     }
 }

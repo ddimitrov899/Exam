@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-namespace BangaloreUniversityLearningSystem.utilities
+namespace BangaloreUniversityLearningSystem.Utilities
 {
     public static class HashUtilities
     {

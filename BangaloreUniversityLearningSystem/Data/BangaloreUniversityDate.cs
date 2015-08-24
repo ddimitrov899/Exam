@@ -1,7 +1,8 @@
 ﻿using System;
 using BangaloreUniversityLearningSystem.Data;
-using Interfaces;
 using BangaloreUniversityLearningSystem.data;
+using BangaloreUniversityLearningSystem.Interfaces;
+using BangaloreUniversityLearningSystem.Utilities;
 
 namespace Data
 {

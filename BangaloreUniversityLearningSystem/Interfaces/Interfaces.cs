@@ -1,7 +1,8 @@
-﻿using BangaloreUniversityLearningSystem.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using BangaloreUniversityLearningSystem.Data;
+using BangaloreUniversityLearningSystem.Utilities;
 
-namespace Interfaces
+namespace BangaloreUniversityLearningSystem.Interfaces
 {
     public interface IBangaloreUniversityDate
     {

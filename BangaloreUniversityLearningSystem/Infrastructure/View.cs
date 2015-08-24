@@ -1,7 +1,8 @@
-﻿namespace BangaloreUniversityLearningSystemy.Infrastructure
+﻿using BangaloreUniversityLearningSystem.Interfaces;
+
+namespace BangaloreUniversityLearningSystem.Infrastructure
 {
     using System.Text;
-    using Interfaces;
 
     public abstract class View : IView
     {
@@ -20,6 +21,5 @@
         }
 
         internal abstract void BuildViewResult(StringBuilder viewResult);
-
     }
 }
