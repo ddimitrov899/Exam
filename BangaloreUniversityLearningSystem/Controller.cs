@@ -9,6 +9,10 @@ namespace BangaloreUniversityLearningSystem
 {
     public abstract class Controller
     {
+        public User User { get; set; }
+
+        public bool HasCurrentUser => User != null;
+
         protected IBangaloreUniversityDate Data { get; set; }
 
         protected IView View(object model)
@@ -38,13 +42,6 @@ namespace BangaloreUniversityLearningSystem
                 const string message = "The current user is not authorized to perform this operation.";
                 throw new DivideByZeroException(message);
             }
-        }
-
-        public User User { get; set; }
-
-        public bool HasCurrentUser
-        {
-            get { return User != null; }
         }
     }
 }
