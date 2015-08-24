@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using BangaloreUniversityLearningSystem.Interfaces;
+﻿namespace BangaloreUniversityLearningSystem.Data
+{
+    using System;
+    using System.Collections.Generic;
+    using Interfaces;
 
-namespace BangaloreUniversityLearningSystem.data
-{    
     public class Repository<T> : IRepository<T>
     {
-        protected List<T> items;
+        protected IList<T> Items;
 
         public Repository()
         {
-            this.items = new List<T>();
+            this.Items = new List<T>();
         }
 
         public virtual IEnumerable<T> GetAll()
         {
-            return this.items;
+            return this.Items;
         }
 
         public virtual T Get(int id)
@@ -23,7 +23,7 @@ namespace BangaloreUniversityLearningSystem.data
             T item;
             try
             {
-                item = this.items[id - 1];
+                item = this.Items[id - 1];
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -35,7 +35,7 @@ namespace BangaloreUniversityLearningSystem.data
 
         public virtual void Add(T item)
         {
-            this.items.Add(item);
+            this.Items.Add(item);
         }
     }
 }
