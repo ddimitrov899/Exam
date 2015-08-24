@@ -3,6 +3,9 @@
     using System;
     using System.Linq;
     using System.Reflection;
+
+    using UI;
+
     using Data;
 
     using Infrastructure;
@@ -11,13 +14,13 @@
 
     public class BangaloreUniversityEngine : IEngen
     {
-        public void Run()
+        public void Run(UserInterface userInterface)
         {
             var bangaloreUniversityDate = new BangaloreUniversityDate();
             User user = null;
             while (true)
             {
-                string url = Console.ReadLine();
+                string url = userInterface.ReadLine();
                 if (string.IsNullOrEmpty(url))
                 {
                     break;
@@ -34,27 +37,27 @@
                 try
                 {
                     var view = action.Invoke(controller, parameters) as IView;
-                    Console.WriteLine(view.Display());
+                    userInterface.WriteLine(view.Display());
                     user = controller.User;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.InnerException.Message);
+                    userInterface.WriteLine(ex.Message);
                 }
             }
         }
 
         private static object[] MapParameters(Route route, MethodInfo action)
         {
-            return action.GetParameters().Select<ParameterInfo, object>(p =>
+            return action.GetParameters().Select<ParameterInfo, object>(parameter =>
             {
-                if (p.ParameterType == typeof(int))
+                if (parameter.ParameterType == typeof(int))
                 {
-                    return int.Parse(route.Parameters[p.Name]);
+                    return int.Parse(route.Parameters[parameter.Name]);
                 }
                 else
                 {
-                    return route.Parameters[p.Name];
+                    return route.Parameters[parameter.Name];
                 }
             }).ToArray();
         }

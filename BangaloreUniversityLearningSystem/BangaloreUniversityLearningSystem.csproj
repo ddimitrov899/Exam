@@ -49,6 +49,8 @@
     <Compile Include="Interfaces\IEngen.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRoute.cs" />
+    <Compile Include="Interfaces\IUserInterface.cs" />
+    <Compile Include="UI\UserInterface.cs" />
     <Compile Include="Utilities\Course.cs" />
     <Compile Include="Utilities\Lecture.cs" />
     <Compile Include="Controller.cs" />

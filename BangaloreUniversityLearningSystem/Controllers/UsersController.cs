@@ -55,6 +55,8 @@
             return this.View(existingUser);
         }
 
+        /// <exception cref="ArgumentException">Condition.</exception>
+        
         public IView Logout()
         {
             if (!this.HasCurrentUser)
