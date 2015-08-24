@@ -1,16 +1,16 @@
-﻿namespace buls.Infrastructure
+﻿namespace BangaloreUniversityLearningSystemy.Infrastructure
 {
     using System.Text;
     using Interfaces;
 
     public abstract class View : IView
     {
-        public View(object model)
+        protected View(object model)
         {
-            this.model = model;
+            this.Model = model;
         }
 
-        public object model { get; private set; }
+        public object Model { get; private set; }
 
         public string Display()
         {
@@ -19,8 +19,7 @@
             return viewResult.ToString().Trim();
         }
 
-        internal virtual void BuildViewResult(StringBuilder viewResult)
-        {
-        }
+        internal abstract void BuildViewResult(StringBuilder viewResult);
+
     }
 }

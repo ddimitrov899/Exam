@@ -1,8 +1,8 @@
-﻿using buls.utilities;
+﻿using BangaloreUniversityLearningSystem.utilities;
 using Interfaces;
 using System;
 
-namespace buls.Controllers
+namespace BangaloreUniversityLearningSystem.Controllers
 {
     class UsersController : Controller
     {

@@ -3,9 +3,9 @@ using System.Linq;
 using System.Reflection;
 using Interfaces;
 using Data;
-using buls.Infrastructure;
+using BangaloreUniversityLearningSystem.Infrastructure;
 
-namespace buls.Core
+namespace BangaloreUniversityLearningSystem.Core
 {
     public class बंगलौर_विश्वविद्यालय_इंजन : Iइंजन
     {

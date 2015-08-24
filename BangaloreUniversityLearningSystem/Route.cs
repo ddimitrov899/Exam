@@ -1,4 +1,4 @@
-﻿namespace buls.Infrastructure
+﻿namespace BangaloreUniversityLearningSystem.Infrastructure
 {
     using System;
     using System.Collections.Generic;

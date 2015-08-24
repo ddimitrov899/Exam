@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Interfaces;
 
-namespace buls.data
+namespace BangaloreUniversityLearningSystem.data
 {    
     public class Repository<T> : IRepository<T>
     {

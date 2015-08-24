@@ -1,6 +1,7 @@
-﻿namespace buls
+﻿using BangaloreUniversityLearningSystem.Core;
+
+namespace BangaloreUniversityLearningSystem
 {
-    using Core;
 
     public class Program
     {

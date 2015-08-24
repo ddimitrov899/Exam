@@ -1,7 +1,7 @@
 ﻿using System;
-using buls.Data;
+using BangaloreUniversityLearningSystem.Data;
 using Interfaces;
-using buls.data;
+using BangaloreUniversityLearningSystem.data;
 
 namespace Data
 {

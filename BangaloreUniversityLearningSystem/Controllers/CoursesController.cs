@@ -1,9 +1,9 @@
-﻿using buls.utilities;
+﻿using BangaloreUniversityLearningSystem.utilities;
 using Interfaces;
 using System;
 using System.Linq;
 
-namespace buls.Controllers
+namespace BangaloreUniversityLearningSystem.Controllers
 {
     class CoursesController : Controller
     {

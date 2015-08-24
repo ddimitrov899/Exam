@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics;
 using Interfaces;
 using System.Reflection;
-using buls.utilities;
+using BangaloreUniversityLearningSystem.utilities;
 using System.Linq;
 using System;
 
-namespace buls
+namespace BangaloreUniversityLearningSystem
 {
     public abstract class Controller
     {

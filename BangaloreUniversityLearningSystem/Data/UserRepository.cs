@@ -1,4 +1,4 @@
-﻿namespace buls.Data
+﻿namespace BangaloreUniversityLearningSystem.Data
 {
     using data;
     using System.Collections.Generic;

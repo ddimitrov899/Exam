@@ -1,4 +1,4 @@
-﻿using buls.Data;
+﻿using BangaloreUniversityLearningSystem.Data;
 using System.Collections.Generic;
 
 namespace Interfaces
@@ -26,7 +26,7 @@ namespace Interfaces
     }
     public interface IView
     {
-        object model { get; }
+        object Model { get; }
         string Display();
     }
 }
