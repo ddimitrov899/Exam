@@ -1,15 +1,12 @@
-﻿using System;
-using BangaloreUniversityLearningSystem.Data;
-using BangaloreUniversityLearningSystem.data;
-using BangaloreUniversityLearningSystem.Interfaces;
-using BangaloreUniversityLearningSystem.Utilities;
-
-namespace Data
+﻿namespace BangaloreUniversityLearningSystem.Data
 {
+    using Interfaces;
+    using Utilities;
+
     public class BangaloreUniversityDate : IBangaloreUniversityDate
     {
         public UsersRepository Users { get; internal set; }
-        public IRepository<Course> Courses { get;  protected set; }
+        public IRepository<Course> Courses { get; protected set; }
 
         public BangaloreUniversityDate()
         {
