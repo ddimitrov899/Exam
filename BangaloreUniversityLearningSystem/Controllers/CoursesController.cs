@@ -5,66 +5,94 @@ using BangaloreUniversityLearningSystem.Interfaces;
 
 namespace BangaloreUniversityLearningSystem.Controllers
 {
-    class CoursesController : Controller
+    internal class CoursesController : Controller
     {
         public CoursesController(IBangaloreUniversityDate data, User user)
         {
             Data = data;
-            usr = user;
+            User = user;
         }
+
         public IView All()
         {
-            return View(Data.courses.GetAll().OrderBy(c => c.Name).ThenByDescending(c => c.Students.Count));
+            return View(Data.Courses.GetAll()
+                        .OrderBy(course => course.Name)
+                        .ThenByDescending(course => course.Students.Count));
         }
+
         public IView Details(int courseId)
         {
             // TODO: Implement me
-            throw new NotImplementedException();
+            return View(Data.Courses.Get(courseId));
         }
+
         public IView Enroll(int id)
         {
             EnsureAuthorization(Role.Student, Role.Lecturer);
-            var c = Data.courses.Get(id);
-            if (c == null)
-                throw new ArgumentException(string.Format("There is no course with ID {0}.", id));
-            if (this.usr.Courses.Contains(c))
-                throw new ArgumentException("You are already enrolled in this course.");
-            c.AddStudent(this.usr);
-            return View(c);
+            var coursesId = Data.Courses.Get(id);
+            if (coursesId == null)
+            {
+                string message = string.Format("There is no course with ID {0}.", id);
+                throw new ArgumentException(message);
+            }
+
+            if (this.User.Courses.Contains(coursesId))
+            {
+                const string message = "You are already enrolled in this course.";
+                throw new ArgumentException(message);
+            }
+
+            coursesId.AddStudent(this.User);
+            return View(coursesId);
         }
-        private Course courseGetter(int c_id)
+
+        private Course CourseGetter(int courseId)
         {
-            var course = this.Data.courses.Get(c_id);
+            var course = this.Data.Courses.Get(courseId);
             if (course == null)
             {
-                throw new ArgumentException(string.Format("There is no course with ID {0}.", c_id));
+                string message = string.Format("There is no course with ID {0}.", courseId);
+                throw new ArgumentException(message);
             }
             return course;
         }
+
         public IView Create(string name)
         {
             if (!this.HasCurrentUser)
-                throw new ArgumentException("There is no currently logged in user.");
-            if (this.usr.IsInRole(Role.Lecturer))
-                throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+            {
+                const string message = "There is no currently logged in user.";
+                throw new ArgumentException(message);
+            }
 
-            var c = new Course(name);
-            Data.courses.Add(c);
-            return View(c);
+            if (this.User.IsInRole(Role.Lecturer))
+            {
+                const string message = "The current user is not authorized to perform this operation.";
+                throw new DivideByZeroException(message);
+            }
+
+            var course = new Course(name);
+            Data.Courses.Add(course);
+            return View(course);
         }
+
         public IView AddLecture(int courseId, string lectureName)
         {
             if (!this.HasCurrentUser)
             {
-                throw new ArgumentException("There is no currently logged in user.");
+                const string message = "There is no currently logged in user.";
+                throw new ArgumentException(message);
             }
 
-            if (!this.usr.IsInRole(Role.Lecturer))
-                throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+            if (!this.User.IsInRole(Role.Lecturer))
+            {
+                const string message = "The current user is not authorized to perform this operation.";
+                throw new DivideByZeroException(message);
+            }
 
-            Course c = courseGetter(courseId);
-            c.AddLecture(new Lecture("lectureName"));
-            return View(c);
+            Course course = CourseGetter(courseId);
+            course.AddLecture(new Lecture("lectureName"));
+            return View(course);
         }
     }
 }

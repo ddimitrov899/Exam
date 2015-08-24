@@ -12,27 +12,31 @@ namespace BangaloreUniversityLearningSystem.Core
     {
         public void Run()
         {
-            var db = new BangaloreUniversityDate();
-            User u = null;
+            var bangaloreUniversityDate = new BangaloreUniversityDate();
+            User user = null;
             while (true)
             {
-                string str = Console.ReadLine();
-                if (str == null)
+                string url = Console.ReadLine();
+                if (url == null)
                 {
                     break;
                 }
-                var route = new Route(str);
-                var controllerType = Assembly.GetExecutingAssembly().GetTypes()
-                    .FirstOrDefault(type => type.Name == route._controllerName)
-                    ;
-                var ctrl = Activator.CreateInstance(controllerType, db, u) as Controller;
-                var act = controllerType.GetMethod(route._actionName);
+                var route = new Route(url);
+                var controllerType =
+                    Assembly.GetExecutingAssembly()
+                        .GetTypes()
+                        .FirstOrDefault(type => type.Name == route.ControllerName);
+                var ctrl = Activator.CreateInstance(controllerType, bangaloreUniversityDate, user) as Controller;
+                var act = controllerType.GetMethod(route.ActionName);
                 object[] @params = MapParameters(route, act);
-                try {
+                try
+                {
                     var view = act.Invoke(ctrl, @params) as IView;
                     Console.WriteLine(view.Display());
-                    u = ctrl.usr;
-                } catch (Exception ex) {
+                    user = ctrl.User;
+                }
+                catch (Exception ex)
+                {
                     Console.WriteLine(ex.InnerException.Message);
                 }
             }
@@ -40,7 +44,11 @@ namespace BangaloreUniversityLearningSystem.Core
 
         private static object[] MapParameters(Route route, MethodInfo action)
         {
-            return action.GetParameters().Select<ParameterInfo, object>(p => { if (p.ParameterType == typeof(int)) return int.Parse(route._parameters[p.Name]); else return route._parameters[p.Name]; }).ToArray();
+            return action.GetParameters().Select<ParameterInfo, object>(p =>
+            {
+                if (p.ParameterType == typeof (int)) return int.Parse(route.Parameters[p.Name]);
+                else return route.Parameters[p.Name];
+            }).ToArray();
         }
     }
 }

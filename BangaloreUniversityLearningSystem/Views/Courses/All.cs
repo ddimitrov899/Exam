@@ -18,11 +18,11 @@ namespace BangaloreUniversityLearningSystem.Views.Courses
             var courses = this.Model as IEnumerable<Course>;
             if (!courses.Any())
             {
-                viewResult.AppendLine("No courses.");
+                viewResult.AppendLine("No Courses.");
             }
             else
             {
-                viewResult.AppendLine("All courses:");
+                viewResult.AppendLine("All Courses:");
                 foreach (var course in courses)
                 {
                     viewResult.AppendFormat("{0} ({1} students)", course.Name, course.Students.Count).AppendLine();

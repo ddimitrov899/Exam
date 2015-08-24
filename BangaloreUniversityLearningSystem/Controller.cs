@@ -14,7 +14,7 @@ namespace BangaloreUniversityLearningSystem
         protected IView View(object model)
         {
             string fullNamespace = this.GetType().Namespace;
-            int firstSeparatorIndex = fullNamespace.IndexOf(".");
+            int firstSeparatorIndex = fullNamespace.IndexOf(".", StringComparison.Ordinal);
             string baseNamespace = fullNamespace.Substring(0, firstSeparatorIndex);
             string controllerName = this.GetType().Name.Replace("Controller", "");
             string actionName = new StackTrace().GetFrame(1).GetMethod().Name;
@@ -29,19 +29,22 @@ namespace BangaloreUniversityLearningSystem
         {
             if (!this.HasCurrentUser)
             {
-                throw new ArgumentException("There is no currently logged in user.");
+                const string message = "There is no currently logged in user.";
+                throw new ArgumentException(message);
             }
 
-            foreach (var u in Data.users.GetAll())
-                if (!roles.Any(role => this.usr.IsInRole(role)))
-                    throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+            if (Data.Users.GetAll().Any(u => !roles.Any(role => this.User.IsInRole(role))))
+            {
+                const string message = "The current user is not authorized to perform this operation.";
+                throw new DivideByZeroException(message);
+            }
         }
 
-        public User usr { get; set; }
+        public User User { get; set; }
 
         public bool HasCurrentUser
         {
-            get { return usr != null; }
+            get { return User != null; }
         }
     }
 }

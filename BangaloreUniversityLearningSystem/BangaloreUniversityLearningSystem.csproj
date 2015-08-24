@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Interfaces\IBangaloreUniversityDate.cs" />
+    <Compile Include="Interfaces\IEngen.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRoute.cs" />
     <Compile Include="Utilities\Course.cs" />
     <Compile Include="Utilities\Lecture.cs" />
     <Compile Include="Controller.cs" />
@@ -54,7 +58,7 @@
     <Compile Include="Data\BangaloreUniversityDate.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Infrastructure\View.cs" />
-    <Compile Include="Interfaces\Interfaces.cs" />
+    <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\HashUtilities.cs" />
