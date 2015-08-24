@@ -5,7 +5,6 @@ namespace BangaloreUniversityLearningSystem.Infrastructure
     using System;
     using System.Collections.Generic;
     using System.Net;
-    using utilities;
 
     public class Route : IRoute
     {

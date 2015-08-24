@@ -2,7 +2,6 @@ namespace BangaloreUniversityLearningSystem.Utilities
 {
     using System;
     using System.Collections.Generic;
-    using utilities;
 
     public class User
     {
