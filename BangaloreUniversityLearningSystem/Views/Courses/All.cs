@@ -18,11 +18,11 @@
             var courses = this.Model as IEnumerable<Course>;
             if (!courses.Any())
             {
-                viewResult.AppendLine("No Courses.");
+                viewResult.AppendLine("No courses.");
             }
             else
             {
-                viewResult.AppendLine("All Courses:");
+                viewResult.AppendLine("All courses:");
                 foreach (var course in courses)
                 {
                     viewResult.AppendFormat("{0} ({1} students)", course.Name, course.Students.Count).AppendLine();
