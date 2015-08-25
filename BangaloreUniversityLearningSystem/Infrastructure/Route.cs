@@ -7,16 +7,33 @@
 
     public class Route : IRoute
     {
+        private string actionName;
+
         public Route(string routeUrl)
         {
             this.Parse(routeUrl);
+            this.ActionName = this.actionName;
         }
 
-        public IDictionary<string, string> Parameters { get; private set; }
+        public IDictionary<string, string> Parameters { get; set; }
 
-        public string ActionName { get; set; }
+        public string ActionName
+        {
+            get
+            {
+                return this.actionName;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException(nameof(value));
+                }
+                this.actionName = value;
+            }
+        }
 
-        public string ControllerName { get; private set; }
+        public string ControllerName { get; set; }
 
         private void Parse(string routeUrl)
         {
@@ -36,8 +53,8 @@
                 string[] parameterPairs = parts[2].Split('&');
                 foreach (var pair in parameterPairs)
                 {
-                    string[] name_value = pair.Split('=');
-                    this.Parameters.Add(WebUtility.UrlDecode(name_value[0]), WebUtility.UrlDecode(name_value[1]));
+                    string[] nameValue = pair.Split('=');
+                    this.Parameters.Add(WebUtility.UrlDecode(nameValue[0]), WebUtility.UrlDecode(nameValue[1]));
                 }
             }
         }

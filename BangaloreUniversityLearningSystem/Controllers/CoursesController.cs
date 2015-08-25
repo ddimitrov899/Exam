@@ -5,7 +5,7 @@
     using Interfaces;
     using Utilities;
 
-    internal class CoursesController : Controller
+    public class CoursesController : Controller
     {
         public CoursesController(IBangaloreUniversityDate data, User user)
         {
@@ -26,13 +26,13 @@
             return this.View(Data.Courses.Get(courseId));
         }
 
-        public IView Enroll(int id)
+        public IView Enroll(int courseId)
         {
             this.EnsureAuthorization(Role.Student, Role.Lecturer);
-            var coursesId = Data.Courses.Get(id);
+            var coursesId = Data.Courses.Get(courseId);
             if (coursesId == null)
             {
-                string message = string.Format("There is no course with ID {0}.", id);
+                string message = string.Format("There is no course with ID {0}.", courseId);
                 throw new ArgumentException(message);
             }
 
@@ -46,7 +46,7 @@
             return this.View(coursesId);
         }
 
-        private Course CourseGetter(int courseId)
+        public Course CourseGetter(int courseId)
         {
             var course = this.Data.Courses.Get(courseId);
             if (course == null)
@@ -58,7 +58,7 @@
             return course;
         }
 
-        private IView Create(string name)
+        public IView Create(string name)
         {
             if (!this.HasCurrentUser)
             {
@@ -66,7 +66,7 @@
                 throw new ArgumentException(Message);
             }
 
-            if (this.User.IsInRole(Role.Lecturer))
+            if (!this.User.IsInRole(Role.Lecturer) && this.User.IsInRole(Role.Student))
             {
                 const string Message = "The current user is not authorized to perform this operation.";
                 throw new DivideByZeroException(Message);
@@ -77,7 +77,7 @@
             return this.View(course);
         }
 
-        private IView AddLecture(int courseId, string lectureName)
+        public IView AddLecture(int courseId, string lectureName)
         {
             if (!this.HasCurrentUser)
             {
@@ -92,7 +92,7 @@
             }
 
             Course course = this.CourseGetter(courseId);
-            course.AddLecture(new Lecture("lectureName"));
+            course.AddLecture(new Lecture(lectureName));
             return this.View(course);
         }
     }

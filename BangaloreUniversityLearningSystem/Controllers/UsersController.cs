@@ -25,7 +25,7 @@
             var existingUser = this.Data.Users.GetByUsername(username);
             if (existingUser != null)
             {
-                throw new ArgumentException(string.Format("A user with username {0} already exists.", username));
+                throw new ArgumentException(message: string.Format("A user with username {0} already exists.", username));
             }
 
             Role userRole = (Role)Enum.Parse(typeof(Role), role, true);
@@ -56,13 +56,14 @@
         }
 
         /// <exception cref="ArgumentException">Condition.</exception>
-        
+
         public IView Logout()
         {
+
             if (!this.HasCurrentUser)
             {
                 const string Message = "There is no currently logged in user.";
-                throw new ArgumentException(Message);
+                throw new ArgumentException(message: Message);
             }
 
             if (!this.User.IsInRole(Role.Lecturer) && !this.User.IsInRole(Role.Student))
@@ -70,7 +71,7 @@
                 const string Message = "The current user is not authorized to perform this operation.";
                 throw new DivideByZeroException(Message);
             }
-
+            
             var user = this.User;
             this.User = null;
             return this.View(user);

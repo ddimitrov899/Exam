@@ -11,6 +11,7 @@ namespace BangaloreUniversityLearningSystem.Utilities
         {
             this.Name = name;
             this.Lectures = new List<Lecture>();
+            this.Students = new List<User>();
         }
 
         public string Name
@@ -43,6 +44,7 @@ namespace BangaloreUniversityLearningSystem.Utilities
 
         public void AddStudent(User student)
         {
+            
             this.Students.Add(student);
             student.Courses.Add(this);
         }

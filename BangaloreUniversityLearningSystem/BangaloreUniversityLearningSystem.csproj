@@ -68,9 +68,9 @@
     <Compile Include="Utilities\User.cs" />
     <Compile Include="Utilities\UserRoleUtilities.cs" />
     <Compile Include="Views\Courses\All.cs" />
-    <Compile Include="Views\Courses\AddLectures.cs" />
+    <Compile Include="Views\Courses\AddLecture.cs" />
     <Compile Include="Views\Courses\Enroll.cs" />
-    <Compile Include="Views\Courses\Crate.cs" />
+    <Compile Include="Views\Courses\Create.cs" />
     <Compile Include="Views\Users\Logout.cs" />
     <Compile Include="Views\Users\Login.cs" />
     <Compile Include="Views\Users\Register.cs" />
