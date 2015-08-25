@@ -7,10 +7,12 @@ namespace BangaloreUniversityLearningSystem.Utilities
     {
         private string username;
         private string passwordHash;
+        private string password;
 
         public User(string username, string password, Role role)
         {
             this.Username = username;
+            this.Password = password;
             this.PasswordHash = HashUtilities.HashPassword(password);
             this.Role = role;
             this.Courses = new List<Course>();
@@ -35,6 +37,24 @@ namespace BangaloreUniversityLearningSystem.Utilities
             }
         }
 
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                if (string.IsNullOrEmpty(value) || value.Length < 6)
+                {
+                    string message = "The password must be at least 6 symbols long.";
+                    throw new ArgumentException(message);
+                }
+                password = value;
+            }
+        }
+
         public string PasswordHash
         {
             get
@@ -44,9 +64,9 @@ namespace BangaloreUniversityLearningSystem.Utilities
 
             set
             {
-                if (string.IsNullOrEmpty(value) || value.Length < 5)
+                if (string.IsNullOrEmpty(value) || value.Length < 6)
                 {
-                    string message = "The password must be at least 5 symbols long.";
+                    string message = "The password must be at least 6 symbols long.";
                     throw new ArgumentException(message);
                 }
 

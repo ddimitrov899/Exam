@@ -114,7 +114,7 @@ namespace BangaloreUniversityLearningSystemUnitTest
             var system = new CoursesController(new BangaloreUniversityDate(), new User(Username, Password, Role.Lecturer));
             var expect = new StringBuilder();
 
-            expect.Append("All Courses:").AppendLine();
+            expect.Append("All courses:").AppendLine();
             expect.Append("Advanced C# (0 students)").AppendLine();
             expect.Append("Java Basic (0 students)");
             system.Create("Advanced C#");
@@ -132,7 +132,7 @@ namespace BangaloreUniversityLearningSystemUnitTest
 
             var result = system.All();
 
-            Assert.AreEqual("No Courses.", result.Display());
+            Assert.AreEqual("No courses.", result.Display());
         }
 
         /// <summary>Test Details method course but no cources expect error masage</summary>

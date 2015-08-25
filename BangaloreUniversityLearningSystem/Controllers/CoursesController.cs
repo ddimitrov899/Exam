@@ -23,7 +23,13 @@
         public IView Details(int courseId)
         {
             // TODO: Implement me
-            return this.View(Data.Courses.Get(courseId));
+            var details = this.View(Data.Courses.Get(courseId));
+            if (!this.HasCurrentUser)
+            {
+                const string Message = "There is no currently logged in user.";
+                throw new ArgumentException(Message);
+            }
+            return details;
         }
 
         public IView Enroll(int courseId)
