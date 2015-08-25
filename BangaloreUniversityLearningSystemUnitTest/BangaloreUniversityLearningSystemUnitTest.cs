@@ -72,13 +72,23 @@ namespace BangaloreUniversityLearningSystemUnitTest
 
         /// <summary>Test create cource expect successes masage</summary>
          [TestMethod]
-         public void TestAddCourse()
+         public void TestCreateCourse()
         {
             var system = new CoursesController(new BangaloreUniversityDate(), new User(Username,Password, Role.Lecturer));
             var result = system.Create("Advanced C#");
             
 
             Assert.AreEqual("Course Advanced C# created successfully.", result.Display());
+        }
+        /// <summary>Test create cource expect successes masage</summary>
+         [TestMethod]
+         public void TestAddLector()
+        {
+            var system = new CoursesController(new BangaloreUniversityDate(), new User(Username,Password, Role.Lecturer));
+            system.Create("Advanced C#");
+            var result = system.AddLecture(1, "Lector");
+
+            Assert.AreEqual("Lecture successfully added to course Advanced C#.", result.Display());
         }
     }
 }
