@@ -3,6 +3,9 @@
 //   
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System.Text;
+
 namespace BangaloreUniversityLearningSystemUnitTest
 {
     using System;
@@ -79,6 +82,23 @@ namespace BangaloreUniversityLearningSystemUnitTest
             
 
             Assert.AreEqual("Course Advanced C# created successfully.", result.Display());
+        }
+
+        /// <summary>Test create cource expect successes masage</summary>
+         [TestMethod]
+         public void TestAllMethodCourse()
+        {
+            var system = new CoursesController(new BangaloreUniversityDate(), new User(Username,Password, Role.Lecturer));
+            var expect = new StringBuilder();
+            expect.Append("All Courses:").AppendLine();
+            expect.Append("Advanced C# (0 students)").AppendLine();
+            expect.Append("Java Basic (0 students)");
+            system.Create("Advanced C#");
+            system.Create("Java Basic");
+
+            var result = system.All();
+
+            Assert.AreEqual(expect.ToString(), result.Display());
         }
     }
 }
