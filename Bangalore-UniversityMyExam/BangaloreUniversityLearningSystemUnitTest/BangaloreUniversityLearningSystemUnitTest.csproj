@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BangaloreUniversityLearningSystem\BangaloreUniversityLearningSystem.csproj">
+    <ProjectReference Include="..\BangaloreUniversity\BangaloreUniversity.csproj">
       <Project>{c70cd24f-a17f-4665-a816-6fe3d7117cc0}</Project>
       <Name>BangaloreUniversityLearningSystem</Name>
     </ProjectReference>
