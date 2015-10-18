@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BangaloreUniversity.BangaloreUniversityMain" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>BangaloreUniversityMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Controller" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAAAAAAAAAAAAAAAAAAAABABAAABAAAAAAAAA=</HashCode>
+      <FileName>Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Controllers.CoursesController" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAABAAAAAEAAAAAAAAAAAEQAAIAAAAAAAAA=</HashCode>
+      <FileName>Controllers\CoursesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Controllers.UsersController" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAIAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Core.BangaloreUniversityEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAI=</HashCode>
+      <FileName>Core\BangaloreUniversityEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BangaloreUniversity.Data.BangaloreUniversityDate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Data\BangaloreUniversityDate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BangaloreUniversity.Data.Repository&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAACABAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Data\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BangaloreUniversity.Data.UsersRepository" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\UserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Infrastructure.Route" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAEAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Route.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BangaloreUniversity.Infrastructure.View" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\View.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BangaloreUniversity.Models.Course" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAABAAAQAAAAEAAQAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Models.Lecture" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Lecture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Models.User" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAEQAAAAEAAAAAAAAAAAAAABAAgAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Utilities.HashUtilities" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\HashUtilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Utilities.UserRoleUtilities" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\UserRoleUtilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Courses.AddLecture" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Courses\AddLecture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Courses.All" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Courses\All.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Courses.Create" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Courses\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Courses.Details" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Courses\Details.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Courses.Enroll" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Courses\Enroll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Users.Login" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Users\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Users.Logout" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Users\Logout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BangaloreUniversity.Views.Users.Register" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Users\Register.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BangaloreUniversity.Interfaces.IBangaloreUniversityDate" Collapsed="true">
+    <Position X="19.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Interfaces\IBangaloreUniversityDate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BangaloreUniversity.Interfaces.IEngene" Collapsed="true">
+    <Position X="21.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Interfaces\IEngene.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BangaloreUniversity.Interfaces.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="23" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BangaloreUniversity.Interfaces.IRoute" Collapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAEAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRoute.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BangaloreUniversity.Interfaces.IView" Collapsed="true">
+    <Position X="21.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BangaloreUniversity.Models.Role" Collapsed="true">
+    <Position X="19.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
